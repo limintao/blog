@@ -6,12 +6,10 @@ document.body.onblur = function(){
 };
 
 
-let time = new Date();
 
-console.log(time)
 
 $(function () {
 
-    console.log(parseInt($(".media-right").children("span").text()) );
+
 });
 

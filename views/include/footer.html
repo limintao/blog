@@ -1,9 +1,10 @@
 <div class="container">
     <div class="foot">
         友情链接：
-        <a href="http://www.glyphicons.com/">glyphicons</a><i>|</i>
-        <a href="http://necolas.github.io/normalize.css/">normalize.css</a><i>|</i>
-        <a href="https://github.com/hustcc/canvas-nest.js">canvas-nest.js</a>
+        <a href="http://www.glyphicons.com/" target="_blank">glyphicons</a><i>|</i>
+        <a href="http://necolas.github.io/normalize.css/" target="_blank">normalize</a><i>|</i>
+        <a href="https://github.com/hustcc/canvas-nest.js" target="_blank">canvas背景</a><i>|</i>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=1432310805&site=qq&menu=yes" target="_blank">我的QQ</a>
     </div>
     <div class="wrapper_copy">
         <div class="copy_text">
@@ -12,7 +13,15 @@
     </div>
 
 </div>
-
+<div id="shangxia">
+    <div id="shang"></div>
+    <!--
+    如果你是博客，这里需要加php判断。
+    是首页则跳转到留言板，是内页则跳转到评论框。
+    -->
+    <div id="comt"></div>
+    <div id="xia"></div>
+</div>
 
 
 </body>
@@ -20,5 +29,48 @@
 <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
 
 <script src="/lib/jquery/dist/masonry-docs.min.js"></script>
+<script src="/javascript/ScrollToPlugin.min.js"></script>
+<script src="/javascript/TweenMax.min.js"></script>
+<script>
+    jQuery(document).ready(function(a) {
+        $body = window.opera ? document.compatMode == "CSS1Compat" ? a("html") : a("body") : a("html,body");
+        a("#shang").mouseover(function () {
+            up();
+        }).mouseout(function () {
+            clearTimeout(fq);
+        }).click(function () {
+            TweenMax.to(window, 1.5, {
+                scrollTo: 0,
+                ease: Expo.easeInOut,
+                y: 0
+            });
+        });
+
+        a("#xia").mouseover(function() {
+            dn();
+        }).mouseout(function() {
+            clearTimeout(fq);
+        }).click(function() {
+            TweenMax.to(window, 1, {
+                scrollTo:".wrapper_copy",
+                ease:Expo.easeInOut
+            });
+        });
+
+    });
+    // 下面的 "up()", 20是鼠标悬停时的位移速度，如需更慢，则设置为40或更高。
+    function up() {
+        $wd = $(window);
+        $wd.scrollTop($wd.scrollTop() - 1);
+        fq = setTimeout("up()", 10);
+    }
+
+    function dn() {
+        $wd = $(window);
+        $wd.scrollTop($wd.scrollTop() + 1);
+        fq = setTimeout("dn()", 10);
+    }
+
+</script>
 
 </html>

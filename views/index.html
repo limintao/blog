@@ -41,11 +41,11 @@
                 <div class="my-gallery-container col-lg-10 col-md-10 col-sm-10 mlistcnt">
                     <div class="item" data-order="31">
                         <a href="/article/detail/<%=article._id%>" style="text-decoration: none">
-                            <h3 class="media-heading title text-center"><%=article.title%></h3>
+                            <h3 class="media-heading title "><%=article.title%></h3>
                             <%if(article.poster){%>
                             <img  class="col-md-12" style="padding: 0;" src="<%=article.poster%>" alt="">
                             <%}%>
-                            <div class="panel-body text-center" >
+                            <div class="item_body " >
                                 <span id=""><%-article.content%></span>
 
                             </div>
@@ -72,15 +72,15 @@
 </div>
 
 <!--页码控制区域-->
-<nav class="text-center" style="margin-top: 50px;">
-    <ul class="pagination">
-        <li><a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum>1)?pageNum-1:1%>&pageSize=<%=pageSize%>">&laquo;</a></li>
-        <%for (var i=1; i<=totalPage; i++){%>
-        <li class="<%=(pageNum==i?'active':'')%>"><a href="/?keyword=<%=keyword%>&pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a></li>
-        <%}%>
-        <li><a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum<totalPage)?pageNum+1:totalPage%>&pageSize=<%=pageSize%>">&raquo;</a></li>
-    </ul>
-</nav>
+<!--<nav class="text-center" style="margin-top: 50px;">-->
+    <!--<ul class="pagination">-->
+        <!--<li><a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum>1)?pageNum-1:1%>&pageSize=<%=pageSize%>">&laquo;</a></li>-->
+        <!--<%for (var i=1; i<=totalPage; i++){%>-->
+        <!--<li class="<%=(pageNum==i?'active':'')%>"><a href="/?keyword=<%=keyword%>&pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a></li>-->
+        <!--<%}%>-->
+        <!--<li><a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum<totalPage)?pageNum+1:totalPage%>&pageSize=<%=pageSize%>">&raquo;</a></li>-->
+    <!--</ul>-->
+<!--</nav>-->
 
 
 <script src="/javascript/particles.min.js"></script>

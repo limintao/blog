@@ -59,6 +59,15 @@
     text-indent: 0;
 }
 
+.item h3{
+    padding: 15px;
+}
+.item_body{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    font-weight: bold;
+}
 
 .g-mn {
     float: left;
