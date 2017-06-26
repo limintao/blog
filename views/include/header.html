@@ -10,8 +10,9 @@
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<nav class="navbar nav-header">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" href="/">博客</a>
@@ -25,7 +26,7 @@
                 <li><a href="/user/logout">退出</a></li>
                 <%} else {%>
                 <li>
-                    <a href="/user/login" data-toggle="modal" data-target="#myModal">登录</a>
+                    <a href="/user/login" class="login" data-toggle="modal" data-target="#myModal">登录</a>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -34,16 +35,17 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="/user/reg">注册</a></li>
+                <li><a href="/user/reg" class="register">注册</a></li>
                 <%}%>
             </ul>
-            <form  action="/?keyword=keyword" method="get" class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" name="keyword" class="form-control" value="<%=keyword%>" placeholder="Search">
+            <form  action="/?keyword=keyword" method="get" class="navbar-form" role="search">
+                <div class="search-group">
+                    <input type="text" name="keyword" class="search-control" value="<%=keyword%>" placeholder="Search">
+                    <button type="submit" class="btn banbutt">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-success">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
+
             </form>
 
         </div>

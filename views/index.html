@@ -1,6 +1,6 @@
+
 <%-include include/header.html%>
 <div class="container bod">
-    <div id="particles-js">
         <div class="g-mn">
             <%if (user){%>
             <div class="publishBarArea">
@@ -29,7 +29,8 @@
             </div>
             <%}%>
             <%articles.forEach(function(article, index){%>
-            <div class="">
+            <%console.log(article)%>
+            <div class="article-container">
                 <div class="mlistimg">
                     <div>
                         <a href="">
@@ -68,8 +69,6 @@
             12156431564
         </div>
 
-    </div>
-
 </div>
 
 <!--页码控制区域-->
@@ -85,60 +84,9 @@
 
 
 <script src="/javascript/particles.min.js"></script>
-<script type="text/javascript">
-    /* default dom id (particles-js) */
-    //particlesJS();
+<script src="/javascript/index/index.js"></script>
+<script color="225,0,0" opacity="0.7" zIndex="-9" src="/javascript/canvas-nest.min.js"></script>
+<script zIndex="-9" alpha="0.5" src="/javascript/ribbon.js"></script>
 
-    /* config dom id */
-    //particlesJS('dom-id');
-
-    /* config dom id (optional) + config particles params */
-    particlesJS('particles-js', {
-        particles: {
-            color: '#000',
-            shape: 'circle', // "circle", "edge" or "triangle"
-            opacity: 1,
-            size: 4,
-            size_random: true,
-            nb: 150,
-            line_linked: {
-                enable_auto: true,
-                distance: 100,
-                color: '#000',
-                opacity: 1,
-                width: 1,
-                condensed_mode: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 600
-                }
-            },
-            anim: {
-                enable: true,
-                speed: 1
-            }
-        },
-        interactivity: {
-            enable: true,
-            mouse: {
-                distance: 300
-            },
-            detect_on: 'canvas', // "canvas" or "window"
-            mode: 'grab',
-            line_linked: {
-                opacity: .5
-            },
-            events: {
-                onclick: {
-                    enable: true,
-                    mode: 'push', // "push" or "remove"
-                    nb: 4
-                }
-            }
-        },
-        /* Retina Display Support */
-        retina_detect: true
-    });
-</script>
 <%-include include/footer.html%>
 

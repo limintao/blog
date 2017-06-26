@@ -1,5 +1,9 @@
 <%-include ../include/header.html%>
-<div class="container-fluid">
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li class="active">文章详情</li>
+    </ol>
     <div class="text-center">
         <h1><%=article.title%></h1>
         <p>发布时间：<%=article.createAt.toLocaleString()%></p>
