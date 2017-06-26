@@ -1,0 +1,144 @@
+<%-include include/header.html%>
+<div class="container bod">
+    <div id="particles-js">
+        <div class="g-mn">
+            <%if (user){%>
+            <div class="publishBarArea">
+                <ul class="m-nav2">
+                    <li class="user">
+                        <a href="#">
+                            <img src="<%=user.avatar%>" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+            <%}%>
+            <%articles.forEach(function(article, index){%>
+            <div class="">
+                <div class="mlistimg">
+                    <div>
+                        <a href="">
+                            <img class="img-circle" style="width: 65px;height: 65px;" src="<%=article.user.avatar%>" alt="...">
+                        </a>
+                    </div>
+                </div>
+                <div class="my-gallery-container col-lg-10 col-md-10 col-sm-10 mlistcnt">
+                    <div class="item" data-order="31">
+                        <a href="/article/detail/<%=article._id%>" style="text-decoration: none">
+                            <h3 class="media-heading title text-center"><%=article.title%></h3>
+                            <%if(article.poster){%>
+                            <img  class="col-md-12" style="padding: 0;" src="<%=article.poster%>" alt="">
+                            <%}%>
+                            <div class="panel-body text-center" >
+                                <span id=""><%-article.content%></span>
+
+                            </div>
+                        </a>
+                        <div class="panel-footer" style="font-size: 16px;">
+                            <a class="media-left " href="#" style="text-decoration: none">
+                                <img class="img-circle" style="width: 25px;height: 25px;" src="<%=article.user.avatar%>" alt="...">
+                                <span><%=article.user.username%></span>
+                            </a>
+                            <div class="media-right">
+                                <span><%=article.createAt.toLocaleString()%></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%})%>
+        </div>
+        <div class="g-sd">
+            12156431564
+        </div>
+
+    </div>
+
+</div>
+
+<!--页码控制区域-->
+<nav class="text-center" style="margin-top: 50px;">
+    <ul class="pagination">
+        <li><a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum>1)?pageNum-1:1%>&pageSize=<%=pageSize%>">&laquo;</a></li>
+        <%for (var i=1; i<=totalPage; i++){%>
+        <li class="<%=(pageNum==i?'active':'')%>"><a href="/?keyword=<%=keyword%>&pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a></li>
+        <%}%>
+        <li><a href="/?keyword=<%=keyword%>&pageNum=<%=(pageNum<totalPage)?pageNum+1:totalPage%>&pageSize=<%=pageSize%>">&raquo;</a></li>
+    </ul>
+</nav>
+
+
+<script src="/javascript/particles.min.js"></script>
+<script type="text/javascript">
+    /* default dom id (particles-js) */
+    //particlesJS();
+
+    /* config dom id */
+    //particlesJS('dom-id');
+
+    /* config dom id (optional) + config particles params */
+    particlesJS('particles-js', {
+        particles: {
+            color: '#000',
+            shape: 'circle', // "circle", "edge" or "triangle"
+            opacity: 1,
+            size: 4,
+            size_random: true,
+            nb: 150,
+            line_linked: {
+                enable_auto: true,
+                distance: 100,
+                color: '#000',
+                opacity: 1,
+                width: 1,
+                condensed_mode: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 600
+                }
+            },
+            anim: {
+                enable: true,
+                speed: 1
+            }
+        },
+        interactivity: {
+            enable: true,
+            mouse: {
+                distance: 300
+            },
+            detect_on: 'canvas', // "canvas" or "window"
+            mode: 'grab',
+            line_linked: {
+                opacity: .5
+            },
+            events: {
+                onclick: {
+                    enable: true,
+                    mode: 'push', // "push" or "remove"
+                    nb: 4
+                }
+            }
+        },
+        /* Retina Display Support */
+        retina_detect: true
+    });
+</script>
+<%-include include/footer.html%>
+

@@ -1,0 +1,24 @@
+<%-include ../include/header.html%>
+<div class="container-fluid">
+    <div class="text-center">
+        <h1><%=article.title%></h1>
+        <p>发布时间：<%=article.createAt.toLocaleString()%></p>
+    </div>
+    <div class="container">
+        <div class="panel panel-default ">
+            <div style="margin-bottom: 10px;padding: 20px;">
+                <span style="font-size: 17px;"><%-article.content%></span>
+                <img style="max-width: 1150px" src="<%=article.poster%>" alt="">
+            </div>
+            <%if (user){%>
+            <div class="panel-footer text-center">
+                <a href="/article/edit/<%=article._id%>" class="btn btn-primary">编辑</a>
+                <a href="/article/delete/<%=article._id%>" class="btn btn-danger">删除</a>
+            </div>
+            <%}%>
+        </div>
+    </div>
+
+</div>
+
+<%-include ../include/footer.html%>
