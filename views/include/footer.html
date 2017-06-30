@@ -13,7 +13,7 @@
     </div>
 
 </div>
-<div id="shangxia">
+<div id="shangxia" >
     <div id="shang"></div>
     <!--
     如果你是博客，这里需要加php判断。
@@ -57,6 +57,13 @@
             });
         });
 
+    });
+    $(window).scroll(function() {
+        if($(window).scrollTop() >= 200){
+            $('#shangxia').fadeIn("slow");
+        }else{
+            $('#shangxia').fadeOut("slow");
+        }
     });
     // 下面的 "up()", 20是鼠标悬停时的位移速度，如需更慢，则设置为40或更高。
     function up() {

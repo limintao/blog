@@ -31,9 +31,9 @@ router.post('/reg',auth.checkNotLogin, function(req, res, next) {
                 userModel.create(user,function (err, doc) {
                     if (!err){
                         req.flash('success', '注册用户信息成功');
-                        res.redirect("/user/login")
+                        res.redirect("/index")
                     }else {
-                        req.flash('error', '注册用户信息失败');
+                        req.flash('error', '注册用户信息失败' + err);
                         res.redirect("back")
                     }
                 })

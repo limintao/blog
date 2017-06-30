@@ -36,6 +36,10 @@ body {
   box-shadow: 0px 2px 10px #666;
   background-color: #57adfd !important;
 }
+.login:focus{
+  color: #fff;
+  background-color: #57adfd !important;
+}
 
 a:focus {
    outline: none !important;
@@ -43,6 +47,7 @@ a:focus {
 }
 .container{
   width: 960px !important;
+  position: relative;
 }
 
 .navbar-form{
@@ -52,6 +57,7 @@ a:focus {
 .nav-header{
   background-color: #FFF;
   color: #3d4044;
+  margin-bottom: 0 !important;
 }
 
 
@@ -93,6 +99,82 @@ input[type="text"]:-ms-input-placeholder {color:#3097CD;} /* ie */
   float: right !important;
 }
 
+.login_wp,.rigsiter_wp{
+  min-height: 300px;
+  /*background: url(../cr180_static/images/login/loginBg.png) no-repeat 0 0;*/
+  background-size: cover;
+  position: relative;
+  height: 810px;
+}
+.login_form,.rigsiter_frm{
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 792px;
+  overflow: hidden;
+}
+#main_message{
+  margin: 0;
+  opacity: 1;
+  width: 100%;
+}
+.login_title, .rigsiter_title{
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #f1f1f1;
+  color: #c0bfbe;
+  font-size: 20px !important;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 8px;
+  border-radius: 0;
+  margin: 0 auto;
+  position: static;
+  top: -12px;
+  width: 100%;
+  zoom: 1;
+}
+.login_title h3, .rigsiter_title h3{
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 60px;
+  width: 50%;
+}
+.login_title h3 a, .rigsiter_title h3 a{
+  text-decoration: none;
+  color: #c0bfbe;
+}
+.login_title .active,.rigsiter_title,.active{
+  background: #fff none repeat scroll 0 0;
+  color: #4a4a4a;
+}
+
+h3.active a {
+  color: #4a4a4a;
+}
+
+.z{
+  float: left;
+}
+.login_box{
+  margin: 0 !important;
+  background: #fff none repeat scroll 0 0;
+  border: medium none;
+  padding: 40px 56px;
+  width: 683px;
+}
+
+
+
+
+
+
+
+
 /* --------- 返回顶部代码 --------- */
 #shangxia {
   position: fixed;
@@ -106,6 +188,7 @@ input[type="text"]:-ms-input-placeholder {color:#3097CD;} /* ie */
   width: 54px;
   height: 300px;
   transition: 1s;
+  display: none;
 }
 
 /* 悬停变为青绿色滤镜动画 */

@@ -26,8 +26,11 @@
                 <li><a href="/user/logout">退出</a></li>
                 <%} else {%>
                 <li>
-                    <a href="/user/login" class="login" data-toggle="modal" data-target="#myModal">登录</a>
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <a href="/user/login" class="login">登录</a>
+                </li>
+                <li>
+                    <a href="/user/reg" class="register" data-toggle="modal" data-target="#regModal">注册</a>
+                    <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
 
@@ -35,7 +38,6 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="/user/reg" class="register">注册</a></li>
                 <%}%>
             </ul>
             <form  action="/?keyword=keyword" method="get" class="navbar-form" role="search">
