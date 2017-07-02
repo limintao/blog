@@ -148,7 +148,7 @@ input[type="text"]:-ms-input-placeholder {color:#3097CD;} /* ie */
   text-decoration: none;
   color: #c0bfbe;
 }
-.login_title .active,.rigsiter_title,.active{
+.login_title .active,.rigsiter_title .active{
   background: #fff none repeat scroll 0 0;
   color: #4a4a4a;
 }
