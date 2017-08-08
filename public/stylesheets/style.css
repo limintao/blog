@@ -3,12 +3,24 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
+  word-wrap: break-word;
 }
 body {
   background-color: #eee !important;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+a ,a:visited,a:hover{
+
+  text-decoration: none !important;
+}
+a:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+img {
+  border:0;
+}
 
 .login,.register{
   width: 50px;
@@ -41,10 +53,7 @@ body {
   background-color: #57adfd !important;
 }
 
-a:focus {
-   outline: none !important;
-   outline-offset: 0 !important;
-}
+
 .container{
   width: 960px !important;
   position: relative;
@@ -169,6 +178,106 @@ h3.active a {
   background: url("http://iwallpapers.free.fr/upload/2013/05/12/20130512182330-9129f444.jpg") no-repeat;
   background-size: cover;
 }
+.artitle_author_date {
+  height: 50px;
+  font-size: 16px;
+  padding: 15px;
+  color: #929292;
+}
+
+.cr_pic{
+  height: 326px;
+  overflow: hidden;
+  text-align: center;
+  width: 930px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+}
+.cr_author{
+  background: none;
+  padding: 0px 0px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #5A5A5A;
+  font-weight: bold;
+  font-family: "Helvetica","Tahoma","Arial","PingFang SC","Microsoft YaHei","SimSun","sans-serif";
+}
+.cr_author:hover{
+  color: #7594B3;
+}
+
+.cl{
+  zoom: 1;
+}
+.cl:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.cr_catdates{
+  line-height: 26px;
+  height: 26px;
+  float: left;
+  margin-top: 5px;
+}
+.cr_h1title{
+  text-align: center;
+  font-size: 30px;
+  color: #4e5053;
+  width: 100%;
+  height: 75px;
+  display: block;
+  padding: 15px 0 10px;
+  margin-bottom: 20px;
+  border-bottom: #bcc0c4 2px solid;
+  line-height: 40px;
+}
+.cr_h1title a {
+  font-size: 30px;
+  font-weight: normal;
+  color: #4e5053;
+}
+dd {
+  display: block;
+  -webkit-margin-start: 40px;
+  -moz-margin-start: 40px;
+  -ms-margin-start: 40px;
+  -o-margin-start: 40px;
+  margin: 0 25px !important;
+}
+.m{
+  text-align: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.article-container dl {
+  background: white;
+  box-shadow: 0px 1px 1px #d2d2d2;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 4px;
+}
+.article-container dt {
+  margin: 0 15px;
+  padding: 0 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.article-container dt a {
+  font-size: 22px;
+  color: #5A5A5A;
+  font-weight: 500;
+}
+.cr_summary{
+  color: #929292;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
 
 
 

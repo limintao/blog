@@ -4,17 +4,28 @@
         <li><a href="/">首页</a></li>
         <li class="active">文章详情</li>
     </ol>
-    <div class="text-center">
-        <h1><%=article.title%></h1>
-        <p>发布时间：<%=article.createAt.toLocaleString()%></p>
+    <div class="text-center panel" style="padding: 15px">
+        <div class="cr_pic">
+            <img style="max-width: 960px;margin-bottom: 10px" src="<%=article.poster%>" alt="<%=article.title%>">
+        </div>
+        <div class="cl">
+            <div class="cr_catdates">
+                <h4><%=article.createAt.toLocaleString()%></h4>
+            </div>
+
+        </div>
+
     </div>
     <div class="container">
         <div class="panel panel-default ">
             <div style="margin-bottom: 10px;padding: 20px;">
+
+                <h1 class="cr_h1title"><a href="/article/detail/<%=article._id%>"><%=article.title%></a></h1>
+
                 <span style="font-size: 17px;"><%-article.content%></span>
-                <img style="max-width: 1150px" src="<%=article.poster%>" alt="">
+
             </div>
-            <%if (user._id){%>
+            <%if (article.user){%>
             <div class="panel-footer text-center">
                 <a href="/article/edit/<%=article._id%>" class="btn btn-primary">编辑</a>
                 <a href="/article/delete/<%=article._id%>" class="btn btn-danger">删除</a>

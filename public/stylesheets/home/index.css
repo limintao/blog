@@ -64,9 +64,8 @@
     padding: 15px;
 }
 .item_body{
-    margin-top: 15px;
     margin-bottom: 10px;
-    padding: 0 10px;
+    color: #929292;
     font-weight: bold;
 }
 
@@ -89,5 +88,10 @@
 .article-container{
     overflow: auto;
     margin-bottom: 10px;
+}
+.article-container dt {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 

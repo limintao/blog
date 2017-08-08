@@ -30,37 +30,44 @@
             <%}%>
             <%articles.forEach(function(article, index){%>
             <%console.log(article)%>
+
             <div class="article-container">
-                <div class="mlistimg">
+                <div class="mlistimg col-lg-2 col-sm-2 col-md-2 col-xs-2">
                     <div>
                         <a href="">
                             <img class="img-circle" style="width: 65px;height: 65px;" src="<%=article.user.avatar%>" alt="...">
                         </a>
                     </div>
                 </div>
-                <div class="my-gallery-container col-lg-10 col-md-10 col-sm-10 mlistcnt">
-                    <div class="item" data-order="31">
-                        <a href="/article/detail/<%=article._id%>" style="text-decoration: none">
-                            <h3 class="media-heading title "><%=article.title%></h3>
-                            <%if(article.poster){%>
-                            <img  class="col-md-12" style="padding: 0;" src="<%=article.poster%>" alt="">
-                            <%}%>
-                            <div class="item_body " >
-                                <span id=""><%-article.content%></span>
+                <dl class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
 
-                            </div>
+                    <div class="artitle_author_date">
+                        <a class="media-left cr_author" href="#" style="text-decoration: none">
+                            <span><%=article.user.username%></span>
                         </a>
-                        <div class="panel-footer" style="font-size: 16px;">
-                            <a class="media-left " href="#" style="text-decoration: none">
-                                <img class="img-circle" style="width: 25px;height: 25px;" src="<%=article.user.avatar%>" alt="...">
-                                <span><%=article.user.username%></span>
-                            </a>
-                            <div class="media-right">
-                                <span><%=article.createAt.toLocaleString()%></span>
-                            </div>
+                        <div class="media-right">
+                            <span><%=article.createAt.toLocaleString()%></span>
                         </div>
                     </div>
-                </div>
+
+                    <dd class="m">
+                        <%if(article.poster){%>
+                        <a href="/article/detail/<%=article._id%>" style="width: 100%;height: auto">
+                            <img style="padding: 0;width: 100%" src="<%=article.poster%>" alt="">
+                        </a>
+                        <%}%>
+                    </dd>
+                    <dt>
+                        <a href="/article/detail/<%=article._id%>" style="text-decoration: none" title="<%=article.title%>">
+                            <h3 class=" "><%=article.title%></h3>
+                        </a>
+                    </dt>
+                    <dd class="cr_summary">
+                        <div class="item_body " >
+                            <span id=""><%-article.content%></span>
+                        </div>
+                    </dd>
+                </dl>
             </div>
 
             <%})%>
