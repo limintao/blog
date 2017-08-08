@@ -1,5 +1,5 @@
 <%-include ../include/header.html%>
-<div class="container">
+<div class="container bod">
     <ol class="breadcrumb">
         <li><a href="/">首页</a></li>
         <li class="active">文章详情</li>
@@ -14,7 +14,7 @@
                 <span style="font-size: 17px;"><%-article.content%></span>
                 <img style="max-width: 1150px" src="<%=article.poster%>" alt="">
             </div>
-            <%if (user){%>
+            <%if (user._id){%>
             <div class="panel-footer text-center">
                 <a href="/article/edit/<%=article._id%>" class="btn btn-primary">编辑</a>
                 <a href="/article/delete/<%=article._id%>" class="btn btn-danger">删除</a>

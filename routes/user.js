@@ -24,14 +24,15 @@ router.post('/reg',auth.checkNotLogin, function(req, res, next) {
 
     userModel.findOne(user,function (err, doc) {
         if (!err){
-            if (doc){
+            if (user){
+                console.log(doc);
                 req.flash('error', '该注册信息已经被占用, 请重新注册');
                 res.redirect('back');
             }else {
                 userModel.create(user,function (err, doc) {
                     if (!err){
                         req.flash('success', '注册用户信息成功');
-                        res.redirect("/index")
+                        res.redirect("user/login")
                     }else {
                         req.flash('error', '注册用户信息失败' + err);
                         res.redirect("back")

@@ -101,10 +101,8 @@ input[type="text"]:-ms-input-placeholder {color:#3097CD;} /* ie */
 
 .login_wp,.rigsiter_wp{
   min-height: 300px;
-  /*background: url(../cr180_static/images/login/loginBg.png) no-repeat 0 0;*/
-  background-size: cover;
   position: relative;
-  height: 810px;
+  height: 872px;
 }
 .login_form,.rigsiter_frm{
   left: 50%;
@@ -166,6 +164,10 @@ h3.active a {
   border: medium none;
   padding: 40px 56px;
   width: 100%;
+}
+.bg-img{
+  background: url("http://iwallpapers.free.fr/upload/2013/05/12/20130512182330-9129f444.jpg") no-repeat;
+  background-size: cover;
 }
 
 
