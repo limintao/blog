@@ -17,22 +17,19 @@ router.get('/reg', auth.checkNotLogin,function(req, res, next) {
 
 router.post('/reg',auth.checkNotLogin, function(req, res, next) {
     var user = req.body;
-
     user.password = md5(user.password);       //对用户信息加密;
 
     user.avatar = 'https://secure.gravatar.com/avatar/'+user.email+'?s=48';//添加头像
-
     userModel.findOne(user,function (err, doc) {
         if (!err){
-            if (user){
-                console.log(doc);
+            if (doc){
                 req.flash('error', '该注册信息已经被占用, 请重新注册');
                 res.redirect('back');
             }else {
                 userModel.create(user,function (err, doc) {
                     if (!err){
                         req.flash('success', '注册用户信息成功');
-                        res.redirect("user/login")
+                        res.redirect("/user/login")
                     }else {
                         req.flash('error', '注册用户信息失败' + err);
                         res.redirect("back")

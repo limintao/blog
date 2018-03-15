@@ -8,7 +8,7 @@
     </div>
     <div class="wrapper_copy">
         <div class="copy_text">
-            版权所有&copy; 2017 李民涛
+            版权所有&copy;&ensp;<%- new Date().getFullYear() -%> &emsp;李民涛
         </div>
     </div>
 
@@ -31,6 +31,7 @@
 <script src="/lib/jquery/dist/masonry-docs.min.js"></script>
 <script src="/javascript/ScrollToPlugin.min.js"></script>
 <script src="/javascript/TweenMax.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 <script>
     jQuery(document).ready(function(a) {
         $body = window.opera ? document.compatMode == "CSS1Compat" ? a("html") : a("body") : a("html,body");
@@ -78,6 +79,9 @@
         fq = setTimeout("dn()", 10);
     }
 
+    $(function () {
+        $('#summerNote').summernote();
+    })
 </script>
 
 </html>

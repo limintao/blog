@@ -3,8 +3,6 @@ var router = express.Router();//创建路由容器
 
 var articleModel = require('../mongodb/db').articleModel;
 
-var markdown = require('markdown').markdown;
-
 
 /* GET home page. */
 //如果访问的是/走下面的路由
@@ -29,10 +27,6 @@ router.get('/', function (req, res, next) {
         .exec(function (err, articles) {
             if (!err) {
                 req.flash('success', '获取文章列表成功');
-
-                articles.forEach(function (article, index) {           //文章内容转换成markdown语法
-                    article.content = markdown.toHTML(article.content)
-                });
 
                 articleModel.count(query, function (err, count) {
                     if (!err){

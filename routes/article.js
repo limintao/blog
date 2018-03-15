@@ -7,8 +7,6 @@ var articleModel = require('../mongodb/db').articleModel;
 
 var multer = require('multer');
 
-var markdown = require('markdown').markdown;
-
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, '../public/uploads');
@@ -26,6 +24,7 @@ router.get('/add', auth.checkLogin, function (req, res) {
 router.post('/add', auth.checkLogin, upload.single('poster'), function (req, res) {
     var article = req.body;//获取请求体中提交的文章信息
 
+    console.info("文章信息：",article);
     article.user = req.session.user._id; //获取登陆的用户_id
 
     if (req.file){        //req.file保存了上传图片的信息；
@@ -49,7 +48,6 @@ router.get('/detail/:_id', function (req, res) {
     articleModel.findById(_id, function (err, doc) {  //根据id找到对应的文章信息
         if (!err){
             req.flash('success', '获取文章详细信息成功');
-            doc.content = markdown.toHTML(doc.content);
             res.render('article/detail', {title:'文章详情页面', article:doc});
         } else {
             req.flash('error', '获取文章详细信息失败');
