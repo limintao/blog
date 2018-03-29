@@ -23,8 +23,6 @@ router.get('/add', auth.checkLogin, function (req, res) {
 
 router.post('/add', auth.checkLogin, upload.single('poster'), function (req, res) {
     var article = req.body;//获取请求体中提交的文章信息
-
-    console.info("文章信息：",article);
     article.user = req.session.user._id; //获取登陆的用户_id
 
     if (req.file){        //req.file保存了上传图片的信息；
@@ -44,11 +42,12 @@ router.post('/add', auth.checkLogin, upload.single('poster'), function (req, res
 
 router.get('/detail/:_id', function (req, res) {
     var _id = req.params._id;
-
+    var user = req.session.user;
     articleModel.findById(_id, function (err, doc) {  //根据id找到对应的文章信息
+        console.info("文章信息",req.session.user);
         if (!err){
             req.flash('success', '获取文章详细信息成功');
-            res.render('article/detail', {title:'文章详情页面', article:doc});
+            res.render('article/detail', {title:'文章详情页面', article:doc,user:user});
         } else {
             req.flash('error', '获取文章详细信息失败');
             res.redirect('back');

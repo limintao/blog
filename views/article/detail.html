@@ -25,7 +25,7 @@
                 <span style="font-size: 17px;"><%-article.content%></span>
 
             </div>
-            <%if (article.user){%>
+            <%if (user && article.user == user._id){%>
             <div class="panel-footer text-center">
                 <a href="/article/edit/<%=article._id%>" class="btn btn-primary">编辑</a>
                 <a href="/article/delete/<%=article._id%>" class="btn btn-danger">删除</a>
@@ -34,8 +34,8 @@
         </div>
     </div>
     <!-- UY BEGIN -->
-    <div id="uyan_frame"></div>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+    <!--<div id="uyan_frame"></div>-->
+    <!--<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>-->
     <!-- UY END -->
 
 </div>

@@ -27,7 +27,6 @@ router.get('/', function (req, res, next) {
         .exec(function (err, articles) {
             if (!err) {
                 req.flash('success', '获取文章列表成功');
-
                 articleModel.count(query, function (err, count) {
                     if (!err){
                         res.render('index', {
