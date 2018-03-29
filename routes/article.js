@@ -44,7 +44,6 @@ router.get('/detail/:_id', function (req, res) {
     var _id = req.params._id;
     var user = req.session.user;
     articleModel.findById(_id, function (err, doc) {  //根据id找到对应的文章信息
-        console.info("文章信息",req.session.user);
         if (!err){
             req.flash('success', '获取文章详细信息成功');
             res.render('article/detail', {title:'文章详情页面', article:doc,user:user});
