@@ -4,14 +4,14 @@
   list-style: none;
   text-decoration: none;
   word-wrap: break-word;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
 }
 body {
   background-color: #eee !important;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
 a ,a:visited,a:hover{
-
   text-decoration: none !important;
 }
 a:focus {
@@ -55,7 +55,7 @@ img {
 
 
 .container{
-  width: 960px !important;
+  min-width: 960px !important;
   position: relative;
 }
 
@@ -186,7 +186,7 @@ h3.active a {
 }
 
 .cr_pic{
-  height: 326px;
+  height: auto;
   overflow: hidden;
   text-align: center;
   width: 930px;
@@ -230,7 +230,6 @@ h3.active a {
   width: 100%;
   height: 75px;
   display: block;
-  padding: 15px 0 10px;
   margin-bottom: 20px;
   border-bottom: #bcc0c4 2px solid;
   line-height: 40px;
@@ -239,6 +238,11 @@ h3.active a {
   font-size: 30px;
   font-weight: normal;
   color: #4e5053;
+}
+.article_img{
+  width: auto;
+  margin: 1rem 0;
+  display: block;
 }
 dd {
   display: block;
@@ -278,7 +282,9 @@ dd {
   margin-bottom: 20px;
 }
 
-
+.note-editable{
+  height: 300px;
+}
 
 
 

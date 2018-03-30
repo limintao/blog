@@ -4,23 +4,12 @@
         <li><a href="/">首页</a></li>
         <li class="active">文章详情</li>
     </ol>
-    <div class="text-center panel" style="padding: 15px">
-        <div class="cr_pic">
-            <img style="max-width: 960px;margin-bottom: 10px" src="<%=article.poster%>" alt="<%=article.title%>">
-        </div>
-        <div class="cl">
-            <div class="cr_catdates">
-                <h4><%=article.createAt.toLocaleString()%></h4>
-            </div>
-
-        </div>
-
-    </div>
     <div class="container">
         <div class="panel panel-default ">
             <div style="margin-bottom: 10px;padding: 20px;">
 
                 <h1 class="cr_h1title"><a href="/article/detail/<%=article._id%>"><%=article.title%></a></h1>
+                <img class="article_img" src="<%=article.poster%>" alt="<%=article.title%>">
 
                 <span style="font-size: 17px;"><%-article.content%></span>
 

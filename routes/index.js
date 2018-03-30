@@ -41,7 +41,7 @@ router.get('/', function (req, res, next) {
                         req.flash('error', '获取文章列表失败');
                         res.redirect('back');
                     }
-                })
+                });
             } else {
                 req.flash('error', '获取文章列表失败');
                 res.redirect('back');

@@ -33,6 +33,14 @@
 <script src="/javascript/TweenMax.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 <script>
+    var title = document.title;
+
+    document.body.onfocus = function(){
+        document.title = title;
+    };
+    document.body.onblur = function(){
+        document.title = 'I Miss You！';
+    };
     jQuery(document).ready(function(a) {
         $body = window.opera ? document.compatMode == "CSS1Compat" ? a("html") : a("body") : a("html,body");
         a("#shang").mouseover(function () {

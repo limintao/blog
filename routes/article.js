@@ -88,9 +88,6 @@ router.post('/edit/:_id', auth.checkLogin, upload.single('poster'), function (re
         article.poster = '/uploads/'+req.file.filename;
     }
 
-    console.log(_id);
-    console.log(article);
-
     articleModel.update({_id:_id}, {$set: article}, function (err, doc) {
         if (!err){
             req.flash('success', '更新文章信息成功');
@@ -99,7 +96,7 @@ router.post('/edit/:_id', auth.checkLogin, upload.single('poster'), function (re
             req.flash('error', '更新文章信息失败');
             res.redirect('back');
         }
-    })
+    });
 });
 
 module.exports = router;

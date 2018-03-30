@@ -25,6 +25,10 @@
     margin-top: 50px;
     padding:0 !important;
 }
+
+.bod .container{
+    padding: 0;
+}
 .m-nav2 {
     position: relative;
     z-index: 9;
@@ -71,12 +75,12 @@
 
 .g-mn {
     float: left;
-    width: 674px;
+    width: 60%;
 }
 .g-sd {
     float: right;
-    width: 230px;
-    padding: 0 0 30px;
+    width: 35%;
+    padding: 0 2rem 30px;
 }
 .mlistimg{
     float: left;
