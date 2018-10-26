@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 mongoose.Promise = Promise;
 
-mongoose.connect(require('../dbUrl').dbUrl);
+mongoose.connect(require('../dbUrl').dbUrl, {useMongoClient:true});
 
 var userSchema = new mongoose.Schema({
     username: String,
