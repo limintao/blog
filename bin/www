@@ -26,9 +26,9 @@ var http = require('http');
  * www整个程序的可执行文件，运行www即可运行当前程序；
  *normalizePort:规范化端口
  *
- * 从环境变量中获取端口号，如果环境变量中没有PORT值，使用默认端口3000
+ * 从环境变量中获取端口号，如果环境变量中没有PORT值，使用默认端口8080
  * */
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 /**
