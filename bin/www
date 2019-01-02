@@ -28,7 +28,7 @@ var http = require('http');
  *
  * 从环境变量中获取端口号，如果环境变量中没有PORT值，使用默认端口3000
  * */
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 /**
